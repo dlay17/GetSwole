@@ -30,6 +30,7 @@ const App = () => {
         <Stack.Screen name="Deadlift" component={Deadlift}/>
         <Stack.Screen name="MaxLift" component={MaximumLift}/>
         <Stack.Screen name="MaxDeadlift" component={MaxDeadlift}/>
+        <Stack.Screen name="MaxBackSquat" component={MaxBackSquat}/>
         <Stack.Screen name="BMI" component={BMI}/>
         <Stack.Screen name="About" component={About}/>
       </Stack.Navigator>
@@ -42,7 +43,7 @@ const IntroScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header text='Get Swole. The App.'/>
       <Text>This is a fitness app that looks at your form in real time and guides you on the perfect squat!</Text>
-      <Button title="Learn to Squat"
+      <Button title="Learn to BackSquat"
         onPress={() =>
           navigation.navigate('Squat', { name: 'Learn to Squat' })
         }/>
@@ -83,6 +84,10 @@ const MaximumLift = ({ navigation, route }) => {
         onPress={() =>
           navigation.navigate('MaxDeadlift', {name: 'Maximum MaxDeadlift'})
         }/>
+      <Button title="Back Squat"
+        onPress={() =>
+          navigation.navigate('MaxBackSquat', {name: 'Maximum BackSquat'})
+        }/>
     </View>
   )
 };
@@ -97,7 +102,22 @@ const MaxDeadlift = ({ navigation, route }) => {
               onChangeText={weight => {setWeight(parseFloat(weight))}}
         />
       </View>
-      <MaxLift lift='Deadlift' weight={weight}/>
+      <MaxLift lift='deadlift' weight={weight}/>
+    </View>
+  )
+}
+const MaxBackSquat = ({ navigation, route }) => {
+  const [weight, setWeight] = useState(0)
+  return (
+    <View style={styles.container}>
+      <View style={styles.rowContainer}>
+        <Text>Enter weight</Text>
+        <TextInput
+              style={styles.textinput}
+              onChangeText={weight => {setWeight(parseFloat(weight))}}
+        />
+      </View>
+      <MaxLift lift='backsquat' weight={weight}/>
     </View>
   )
 }

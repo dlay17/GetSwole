@@ -1,0 +1,15 @@
+{
+  "lift": "Deadlift",
+  "men": {
+    "novice": 1.33,
+    "average": 1.5,
+    "advance": 2.1,
+    "elite": 2.6
+  },
+  "women": {
+    "novice": 1.01,
+    "average": 1.18,
+    "advance": 1.6,
+    "elite": 2
+  }
+}

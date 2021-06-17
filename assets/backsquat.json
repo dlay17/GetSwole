@@ -1,0 +1,15 @@
+{
+  "lift": "BackSquat",
+  "men": {
+    "novice": 1.1,
+    "average": 1.4,
+    "advance": 1.9,
+    "elite": 2.4
+  },
+  "women": {
+    "novice": 0.8,
+    "average": 0.9,
+    "advance": 1.2,
+    "elite": 1.5
+  }
+}
