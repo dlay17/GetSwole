@@ -5,14 +5,6 @@ import { View, Image, Text, StyleSheet, TextInput  } from "react-native";
 import deadlift from '../assets/deadlift.json'
 import backsquat from '../assets/backsquat.json'
 
-const TextBox = (props) => {
-  return (
-    <View style={styles.tableRow}>
-      <Text>{props.text}</Text>
-    </View>
-  )
-}
-
 const MaxLift = (props) => {
   let lift
   switch(props.lift) {
@@ -25,31 +17,45 @@ const MaxLift = (props) => {
     default:
       lift = "null"
   }
+  const [weight, setWeight] = useState(0)
 
   return (
     <View style={styles.container}>
-      <Text>{lift.lift}</Text>
+      <Text style={styles.header}>{lift.lift}</Text>
       <View style={styles.rowContainer}>
-        <TextBox text=' '/>
-        <TextBox text='Novice'/>
-        <TextBox text='Average'/>
-        <TextBox text='Advance'/>
-        <TextBox text='Elite'/>
+        <Text>Enter weight</Text>
+        <TextInput
+              style={styles.textinput}
+              onChangeText={weight => {setWeight(parseFloat(weight))}}
+        />
       </View>
-      <View style={styles.rowContainer}>
-        <TextBox text='Men'/>
-        <TextBox text={props.weight*lift.men.novice}/>
-        <TextBox text={props.weight*lift.men.average}/>
-        <TextBox text={props.weight*lift.men.advance}/>
-        <TextBox text={props.weight*lift.men.elite}/>
-      </View>
-      <View style={styles.rowContainer}>
-        <TextBox text='Women'/>
-        <TextBox text={props.weight*lift.women.novice}/>
-        <TextBox text={props.weight*lift.women.average}/>
-        <TextBox text={props.weight*lift.women.advance}/>
-        <TextBox text={props.weight*lift.women.elite}/>
-      </View>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">Novice</th>
+            <th scope="col">Average</th>
+            <th scope="col">Advance</th>
+            <th scope="col">Elite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Men</th>
+            <td>{Math.round(weight*lift.men.novice)}</td>
+            <td>{Math.round(weight*lift.men.average)}</td>
+            <td>{Math.round(weight*lift.men.advance)}</td>
+            <td>{Math.round(weight*lift.men.elite)}</td>
+          </tr>
+          <tr>
+            <th scope="row">Women</th>
+            <td>{Math.round(weight*lift.women.novice)}</td>
+            <td>{Math.round(weight*lift.women.average)}</td>
+            <td>{Math.round(weight*lift.women.advance)}</td>
+            <td>{Math.round(weight*lift.women.elite)}</td>
+          </tr>
+        </tbody>
+      </table>
     </View>
   )
 }
@@ -60,13 +66,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  tableRow: {
-    backgroundColor: '#f9c2ff',
-    marginVertical: 4,
-    marginHorizontal: 8,
-    width: 100,
-    height: 50
   },
   header: {
     fontSize:40,

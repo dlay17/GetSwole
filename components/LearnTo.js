@@ -7,6 +7,7 @@ const LearnTo = (props) => {
   <View style={styles.container}>
       <Image
           style= {styles.logo}
+          resizeMode='contain'
           source={{
             uri: props.url,
           }}
@@ -25,13 +26,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo:{
-    width: 1526,
-    height: 900,
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
+    flex: 1,
+    width: '100%',
+    height: undefined,
+    aspectRatio: 1,
   },
 });
 

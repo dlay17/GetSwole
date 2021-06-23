@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LearnTo from './components/LearnTo'
 import MaxLift from './components/MaxLift'
 import BMIcalc from './components/BmiCalculator'
+import Camera from './components/Camera'
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={IntroScreen}/>
+        <Stack.Screen name="Camera" component={Camera}/>
         <Stack.Screen name="Squat" component= {Squats}/>
         <Stack.Screen name="Deadlift" component={Deadlift}/>
         <Stack.Screen name="MaxLift" component={MaximumLift}/>
@@ -43,6 +45,10 @@ const IntroScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header text='Get Swole. The App.'/>
       <Text>This is a fitness app that looks at your form in real time and guides you on the perfect squat!</Text>
+      <Button title="Capture your form"
+        onPress={() =>
+          navigation.navigate('Camera', { name: 'Capture your form' })
+        }/>
       <Button title="Learn to BackSquat"
         onPress={() =>
           navigation.navigate('Squat', { name: 'Learn to Squat' })
@@ -92,32 +98,16 @@ const MaximumLift = ({ navigation, route }) => {
   )
 };
 const MaxDeadlift = ({ navigation, route }) => {
-  const [weight, setWeight] = useState(0)
   return (
     <View style={styles.container}>
-      <View style={styles.rowContainer}>
-        <Text>Enter weight</Text>
-        <TextInput
-              style={styles.textinput}
-              onChangeText={weight => {setWeight(parseFloat(weight))}}
-        />
-      </View>
-      <MaxLift lift='deadlift' weight={weight}/>
+      <MaxLift lift='deadlift'/>
     </View>
   )
 }
 const MaxBackSquat = ({ navigation, route }) => {
-  const [weight, setWeight] = useState(0)
   return (
     <View style={styles.container}>
-      <View style={styles.rowContainer}>
-        <Text>Enter weight</Text>
-        <TextInput
-              style={styles.textinput}
-              onChangeText={weight => {setWeight(parseFloat(weight))}}
-        />
-      </View>
-      <MaxLift lift='backsquat' weight={weight}/>
+      <MaxLift lift='backsquat'/>
     </View>
   )
 }
