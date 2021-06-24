@@ -9,6 +9,7 @@ import LearnTo from './components/LearnTo'
 import MaxLift from './components/MaxLift'
 import BMIcalc from './components/BmiCalculator'
 import Camera from './components/Camera'
+import CustomWO from './components/CustomWorkout'
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ const App = () => {
         <Stack.Screen name="MaxLift" component={MaximumLift}/>
         <Stack.Screen name="MaxDeadlift" component={MaxDeadlift}/>
         <Stack.Screen name="MaxBackSquat" component={MaxBackSquat}/>
+        <Stack.Screen name="CustomWO" component={CustomWO}/>
         <Stack.Screen name="BMI" component={BMI}/>
         <Stack.Screen name="About" component={About}/>
       </Stack.Navigator>
@@ -93,6 +95,10 @@ const MaximumLift = ({ navigation, route }) => {
       <Button title="Back Squat"
         onPress={() =>
           navigation.navigate('MaxBackSquat', {name: 'Maximum BackSquat'})
+        }/>
+      <Button title="Custom Workout"
+        onPress={() =>
+          navigation.navigate('CustomWO', {name: 'Custom Workout'})
         }/>
     </View>
   )
