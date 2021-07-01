@@ -3082,6 +3082,14 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+expo-app-auth@~10.1.2:
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/expo-app-auth/-/expo-app-auth-10.1.2.tgz#3fa0375e8c57e1911468da33a8aebe0bb62ac86e"
+  integrity sha512-scYsgp+PIcM1zq+tOK6gpeuPsC0FnbMHfvRx5KxiY5Z+0M2dG/ehkgw9aOHuZD+v+TVBRUEfd6HAapI3e63gIw==
+  dependencies:
+    "@expo/config-plugins" "^1.0.18"
+    invariant "^2.2.4"
+
 expo-application@~3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/expo-application/-/expo-application-3.1.2.tgz#7c93e8108a7f2a0be0afe37151f36c98e0111e7c"
@@ -3135,6 +3143,13 @@ expo-font@~9.1.0:
   integrity sha512-owzbbfrQet7mawTGKMXpVCIA9k56MGhtriO41AW4Zo65dd2Ikm4LoymuHKp2ZlHuIFjRnjECKWz7RXgy/C1yAg==
   dependencies:
     fontfaceobserver "^2.1.0"
+
+expo-google-app-auth@^8.1.7:
+  version "8.1.7"
+  resolved "https://registry.yarnpkg.com/expo-google-app-auth/-/expo-google-app-auth-8.1.7.tgz#41154838142726ac02e06f8a7a6505c21596efa0"
+  integrity sha512-BHYZPmry/Mqdti8VZa6b5KsyP/t34J8kKjHXSqznZzdR2UnzfLkPc53w2f0csNUwCD1C3jP8whtsLqIXV+ynkA==
+  dependencies:
+    expo-app-auth "~10.1.2"
 
 expo-keep-awake@~9.1.2:
   version "9.1.2"
@@ -5243,6 +5258,11 @@ react-native-gesture-handler@~1.10.2:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-google-signin@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-google-signin/-/react-native-google-signin-2.1.1.tgz#4281940eee88602b0181dd49affdf8c92980c85c"
+  integrity sha512-6l3fiLdX/bfhh0BoxGq+jGkagFsO+mrE/eRV4+3/0k8+FDxO90vdPpQdDiwlM5vWXRxWthTzMM09/jHw+4cvNw==
+
 react-native-iphone-x-helper@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
@@ -5279,6 +5299,11 @@ react-native-size-matters@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.3.1.tgz#24d0cfc335a2c730f6d58bd7b43ea5a41be4b49f"
   integrity sha512-mKOfBLIBFBcs9br1rlZDvxD5+mAl8Gfr5CounwJtxI6Z82rGrMO+Kgl9EIg3RMVf3G855a85YVqHJL2f5EDRlw==
+
+react-native-table-component@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-table-component/-/react-native-table-component-1.2.1.tgz#5f1e0f159b1dff9df0d5601c4a5ab99d1aa99a25"
+  integrity sha512-sapwO0bONfQtpWg3GVMwP5D3lGEJlxPB3c7fb0soXBynvCa+SBktacVZ9OmYJnIbRJ3uW5pS4tzNc8GmE+UScw==
 
 react-native-web@~0.13.12:
   version "0.13.18"

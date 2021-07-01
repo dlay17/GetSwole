@@ -11,6 +11,7 @@ import BMIcalc from './components/BmiCalculator'
 import Camera from './components/Camera'
 import CustomWO from './components/CustomWorkout'
 
+
 const Stack = createStackNavigator();
 
 const Header = (props) => {
@@ -28,6 +29,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={IntroScreen}/>
+
         <Stack.Screen name="Camera" component={Camera}/>
         <Stack.Screen name="Squat" component= {Squats}/>
         <Stack.Screen name="Deadlift" component={Deadlift}/>
@@ -47,6 +49,7 @@ const IntroScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header text='Get Swole. The App.'/>
       <Text>This is a fitness app that looks at your form in real time and guides you on the perfect squat!</Text>
+
       <Button title="Capture your form"
         onPress={() =>
           navigation.navigate('Camera', { name: 'Capture your form' })

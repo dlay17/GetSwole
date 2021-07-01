@@ -1,5 +1,3 @@
-// This component gives the ideal weight you should lift for your weight
-
 import React, { useState } from "react";
 import { View, Image, Text, StyleSheet, TextInput  } from "react-native";
 import deadlift from '../assets/deadlift.json'

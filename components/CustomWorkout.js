@@ -20,7 +20,6 @@ const ToDoList = (props) => {
 
   const getData = async () => {
         try {
-          // the '@profile_info' can be any string
           const jsonValue = await AsyncStorage.getItem('@CustomWorkouts')
           let data = null
           if (jsonValue!=null) {
@@ -38,7 +37,6 @@ const ToDoList = (props) => {
         } catch(e) {
           console.log("error in getData ")
           console.dir(e)
-          // error reading value
         }
   }
 
@@ -50,7 +48,6 @@ const ToDoList = (props) => {
         } catch (e) {
           console.log("error in storeData ")
           console.dir(e)
-          // saving error
         }
   }
 
@@ -61,7 +58,6 @@ const ToDoList = (props) => {
         } catch(e) {
           console.log("error in clearData ")
           console.dir(e)
-          // clear error
         }
   }
 

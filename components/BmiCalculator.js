@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
-
-// const mph2fps = (mph) => mph*5280/3600
-
 const BmiCalculator = (props) => {
   const [height, setHeight] = useState(0)
   const [weight, setWeight] = useState(0)

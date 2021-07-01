@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 
 export default function App() {
@@ -20,10 +20,8 @@ export default function App() {
     return <Text>No access to camera</Text>;
   }
   return (
-
-    <SafeAreaView style={styles.container}>
-     <Text style={{fontSize:30}}>Capture form </Text>
-     <View style={{flex:1}}>
+    <View style={styles.container}>
+      <Text style={{flex:1}}>Top</Text>
       <Camera style={styles.camera} type={type}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
@@ -39,12 +37,8 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </Camera>
-      </View>
-      <View style={{flex:1}}>
-        <Text>This is the bottom half of the screen </Text>
-      </View>
-    </SafeAreaView>
-
+      <Text style={{flex:1}}>This is the bottom of the screen</Text>
+    </View>
   );
 }
 
@@ -54,7 +48,6 @@ const styles = StyleSheet.create({
   },
   camera: {
     flex: 1,
-    margin:10,
   },
   buttonContainer: {
     flex: 1,
